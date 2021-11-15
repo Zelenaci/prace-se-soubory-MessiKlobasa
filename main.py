@@ -1,17 +1,27 @@
 #!/usr/bin/env python3
 ############################################################################
 # Soubor:  main.py
-# Datum:
-# Autor:
+# Datum:   15.11.2021 
+# Autor:   Večeřa Vojtěch 
 ############################################################################
 from random import randint, choice
 
 ############################################################################
 
 
-def f():
-    return None
+from random import randint, choice
 
+samohlasky = 'aeiyou'
+souhlasky = 'qwrtzpsdfghjklyxcvbnm'
 
-if __name__ == "__main__":
-    print(f())
+def slovo (maxchars = 10):
+    vysledek = ''
+    zacatek = randint(0, 1)
+    for i in range(randint(1,maxchars) ):
+        if i % 2 == zacatek :
+            vysledek += choice(samohlasky)
+        else:
+            vysledek += choice(souhlasky)    
+    return vysledek
+
+print(slovo())
